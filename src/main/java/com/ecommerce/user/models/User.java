@@ -38,6 +38,9 @@ public class User {
         inverseJoinColumns = @JoinColumn(name = "role_id"))
   private Set<Role> roles = new HashSet<>();
 
+  @Column(name = "reset_password_token")
+  private String resetPasswordToken;
+
   public User() {
   }
 
@@ -85,5 +88,13 @@ public class User {
 
   public void setRoles(Set<Role> roles) {
     this.roles = roles;
+  }
+
+  public String getResetPasswordToken() {
+    return resetPasswordToken;
+  }
+
+  public void setResetPasswordToken(String resetPasswordToken) {
+    this.resetPasswordToken = resetPasswordToken;
   }
 }
